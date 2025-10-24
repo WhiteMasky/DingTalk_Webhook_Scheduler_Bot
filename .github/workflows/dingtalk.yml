@@ -2,9 +2,9 @@ name: Send DingTalk Notification
 
 on:
   # 你可以选择多种触发方式，例如：
-  push: # 每次推送代码时触发
+  # push: # 每次推送代码时触发
   # schedule: # 定时触发（比如每天早上 9 点）
-  #   - cron: '0 9 * * *'
+    - cron: '*/1 * * * *'
   # workflow_dispatch: # 手动触发
 
 jobs:
