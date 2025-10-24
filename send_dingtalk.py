@@ -6,7 +6,7 @@ import hmac
 import hashlib
 import base64
 import urllib.parse
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 # 固定名单（顺序不可变）
 MEMBERS = [
