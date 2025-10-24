@@ -31,8 +31,8 @@ jobs:
 
       - name: Wait 5 minutes and auto push
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "zhangyichichn@outlook.com"
+          git config --local user.name "WhiteMasky"
           sleep 300  # 等待5分钟
           echo "$(date)" > last_run.txt
           git add last_run.txt
