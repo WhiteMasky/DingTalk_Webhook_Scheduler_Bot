@@ -34,7 +34,7 @@ def get_today_assignments():
     now = datetime.now(tz_beijing)
     base_date = datetime(2025, 1, 1, tzinfo=tz_beijing)
     days_since_base = (now - base_date).days
-    offset = (days_since_base * 4) % len(MEMBERS)
+    offset = (days_since_base * 4 + 12) % len(MEMBERS)
 
     assignments = []
     at_user_ids = []
