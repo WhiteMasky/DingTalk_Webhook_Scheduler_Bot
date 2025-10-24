@@ -10,19 +10,19 @@ from datetime import datetime, timezone, timedelta
 
 # 固定名单（顺序不可变）- 格式：显示名称:userId
 MEMBERS = [
-    {"name": "@钿钿", "userId": "USER_ID_1"},
-    {"name": "@久七", "userId": "USER_ID_2"},
-    {"name": "@德洛", "userId": "USER_ID_3"},
-    {"name": "@青之", "userId": "USER_ID_4"},
-    {"name": "@可文", "userId": "USER_ID_5"},
-    {"name": "@昕允", "userId": "USER_ID_6"},
     {"name": "@周砥", "userId": "USER_ID_7"},
     {"name": "@舟舟", "userId": "USER_ID_8"},
     {"name": "@焱枫", "userId": "USER_ID_9"},
     {"name": "@子珩", "userId": "USER_ID_10"},
     {"name": "@九岚", "userId": "USER_ID_11"},
     {"name": "@启涵", "userId": "USER_ID_12"},
-    {"name": "@熙城", "userId": "USER_ID_13"}
+    {"name": "@熙城", "userId": "USER_ID_13"},
+    {"name": "@钿钿", "userId": "USER_ID_1"},
+    {"name": "@久七", "userId": "USER_ID_2"},
+    {"name": "@德洛", "userId": "USER_ID_3"},
+    {"name": "@青之", "userId": "USER_ID_4"},
+    {"name": "@可文", "userId": "USER_ID_5"},
+    {"name": "@昕允", "userId": "USER_ID_6"},
 ]
 
 # 固定任务顺序
@@ -32,9 +32,9 @@ def get_today_assignments():
     """根据当前日期计算今日轮值的4人及对应任务"""
     tz_beijing = timezone(timedelta(hours=8))
     now = datetime.now(tz_beijing)
-    base_date = datetime(2025, 1, 1, tzinfo=tz_beijing)
+    base_date = datetime(2025, 10, 24, tzinfo=tz_beijing)
     days_since_base = (now - base_date).days
-    offset = (days_since_base * 4 + 12) % len(MEMBERS)
+    offset = (days_since_base * 4) % len(MEMBERS)
 
     assignments = []
     at_user_ids = []
