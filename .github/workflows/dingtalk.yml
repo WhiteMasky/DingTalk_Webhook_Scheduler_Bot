@@ -36,7 +36,7 @@ jobs:
         run: |
           git config --local user.email "zhangyichichn@outlook.com"
           git config --local user.name "WhiteMasky"
-          sleep 300  # 等待5分钟
+          sleep 30  # 等待5分钟
           echo "$(date)" > last_run.txt
           git add last_run.txt
           git commit -m "Auto trigger next run: $(date)" || exit 0
