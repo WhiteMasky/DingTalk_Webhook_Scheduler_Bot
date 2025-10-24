@@ -21,9 +21,8 @@ def get_today_assignments():
     """根据当前日期计算今日轮值的4人及对应任务"""
     tz_beijing = timezone(timedelta(hours=8))
     now = datetime.now(tz_beijing)
-    # 计算从某个起点（比如 2025-01-01）起的天数，作为轮转偏移基准
-    # 也可以直接用年月日字符串作为种子，但用天数更直观
-    base_date = datetime(2025, 1, 1)
+    # 将 base_date 也设置为带时区的 datetime 对象
+    base_date = datetime(2025, 1, 1, tzinfo=tz_beijing)
     days_since_base = (now - base_date).days
     offset = (days_since_base * 4) % len(MEMBERS)
 
